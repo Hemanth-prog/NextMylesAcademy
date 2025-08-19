@@ -5,45 +5,348 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Next Myles Academy | Courses</title>
   <style>
-  body { background:#1c2239; color:#eef1fa; font-family:'Segoe UI',Arial,sans-serif; margin:0;}
-  .hero-bar{max-width:900px; margin:auto; padding:68px 24px 30px 24px; text-align:center;}
-  .hero-bar h1{color:#ffe700; font-size:2.2em;}
-  .hero-bar p{color:#d8e1f1; font-size:1.18em; line-height:1.5em;}
-  .cta-btn{background:#bcfd4c; color:#082030; padding:14px 45px; border-radius:24px; margin:24px 0; font-size:1.2em;font-weight:700;box-shadow:0 2px 10px #b2f59e60;transition:.24s;text-decoration:none;}
-  .cta-btn:hover{background:#ff3f3f; color:#fff;}
-  
-  header {display:flex;align-items:center;justify-content:center;padding:45px 10px 10px 10px;background:#1c2239;box-shadow:0 8px 36px #0008; border-radius:0 0 34px 34px;}
-  header img {height:120px;width:auto;border-radius:18px;box-shadow:0 3px 22px #0007;margin-right:32px;}
-  .academy-title {font-size:2.2em;color:#bcfd4c;letter-spacing:2px;font-weight:700;text-shadow:2px 2px #0008;}
-  .academy-tag {color:#ff3f3f;font-size:1.09em;margin-top:6px;letter-spacing:1px;}
-  nav {margin-top:13px; display:flex; flex-wrap:wrap; justify-content:center;}
-  nav a {color:#3fbcef;background:#152344;margin:5px 5px;padding:8px 16px;text-decoration:none;font-weight:600;border-radius:14px;font-size:0.9em;}
-  footer{text-align:center;background:#102232;color:#b8c2d5;padding:26px 0;font-size:1em;margin-top:62px;border-top:2px solid #1f2838;}
-  
-  /* Mobile Responsive Styles */
-  @media (max-width: 768px) {
-    header {flex-direction:column; padding:20px 10px;}
-    header img {margin-right:0; margin-bottom:15px; height:80px;}
-    .academy-title {font-size:1.8em; text-align:center;}
-    .academy-tag {font-size:1em; text-align:center;}
-    nav {margin-top:15px; flex-direction:column; align-items:center;}
-    nav a {margin:3px 0; padding:10px 20px; width:80%; text-align:center; font-size:1em;}
-    .hero-bar {padding:40px 15px 20px 15px;}
-    .hero-bar h1 {font-size:1.8em;}
-    .hero-bar p {font-size:1em;}
-  }
-  
-  @media (max-width: 480px) {
-    .academy-title {font-size:1.5em;}
-    nav a {width:90%; padding:12px;}
-    .hero-bar h1 {font-size:1.5em;}
-  }
-</style>
+    body {
+      background: linear-gradient(135deg, #21234b 0%, #2d1b69 50%, #1a1a2e 100%);
+      color:#eef1fa; 
+      font-family:'Segoe UI',Arial,sans-serif;
+      margin:0;
+      min-height:100vh;
+    }
+    
+    /* Header Styles */
+    header {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:45px 15px 15px 15px;
+      background:rgba(28,34,57,0.95);
+      box-shadow:0 8px 36px #0008; 
+      border-radius:0 0 34px 34px;
+      backdrop-filter: blur(10px);
+    }
+    
+    header img {
+      height:120px;
+      width:auto;
+      border-radius:18px;
+      box-shadow:0 8px 32px #0008;
+      margin-right:32px;
+      transition: transform 0.3s ease;
+    }
+    
+    header img:hover {
+      transform: scale(1.05);
+    }
+    
+    .header-content {
+      text-align: left;
+    }
+    
+    .academy-title {
+      font-size:2.4em;
+      color:#bcfd4c;
+      letter-spacing:2px;
+      font-weight:700;
+      text-shadow:2px 2px 8px #000;
+      margin: 0;
+      background: linear-gradient(45deg, #bcfd4c, #a8e6cf);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .academy-tag {
+      color:#ff3f3f;
+      font-size:1.1em;
+      margin-top:8px;
+      letter-spacing:1px;
+      font-weight: 500;
+    }
+    
+    nav {
+      margin-top:20px; 
+      display:flex; 
+      flex-wrap:wrap; 
+      justify-content:center; 
+      gap:12px;
+    }
+    
+    nav a {
+      color:#3fbcef;
+      background:rgba(21,35,68,0.8);
+      padding:12px 24px;
+      text-decoration:none;
+      font-weight:600;
+      border-radius:25px;
+      font-size:1em;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+    
+    nav a:hover {
+      background:#bcfd4c; 
+      color:#222;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(188, 253, 76, 0.4);
+      border: 2px solid #bcfd4c;
+    }
+    
+    /* Courses Section */
+    .course-section {
+      max-width:1200px;
+      margin:0 auto;
+      padding:60px 30px 40px 30px;
+    }
+    
+    .course-section h1 {
+      text-align: center;
+      font-size: 3em;
+      color: #ffe700;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 10px #000;
+      background: linear-gradient(45deg, #ffe700, #ffd700);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .course-subtitle {
+      text-align: center;
+      font-size: 1.2em;
+      color: #d8e1f1;
+      margin-bottom: 50px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .course-list {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+      gap:30px;
+      margin-top:40px;
+    }
+    
+    .course-card {
+      background: linear-gradient(135deg, rgba(39, 97, 247, 0.6), rgba(96, 219, 57, 0.3));
+      border-radius:20px;
+      box-shadow:0 15px 40px #0005;
+      margin-bottom:20px;
+      padding:35px 25px;
+      border-left: 4px solid #bcfd4c;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .course-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent, rgba(188, 253, 76, 0.1), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .course-card:hover::before {
+      opacity: 1;
+    }
+    
+    .course-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+      border-left: 4px solid #ff3f3f;
+    }
+    
+    .course-card h2 {
+      color:#bcfd4c;
+      font-size:1.4em;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+    }
+    
+    .course-icon {
+      margin-right: 12px;
+      font-size: 1.2em;
+    }
+    
+    .course-card p {
+      color:#fff;
+      font-size:1.1em;
+      margin-top:15px;
+      line-height: 1.6;
+    }
+    
+    .course-card strong {
+      color: #ffe700;
+    }
+    
+    .course-features {
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .course-features ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .course-features li {
+      color: #d8e1f1;
+      margin: 8px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+    
+    .course-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #bcfd4c;
+      font-weight: bold;
+    }
+    
+    .enroll-btn {
+      background: linear-gradient(45deg, #bcfd4c, #a8e6cf);
+      color: #082030;
+      padding: 12px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1em;
+      display: inline-block;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .enroll-btn:hover {
+      background: linear-gradient(45deg, #ff3f3f, #ff6b6b);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 63, 63, 0.4);
+    }
+    
+    /* Footer */
+    footer {
+      text-align:center;
+      background:rgba(16,34,50,0.9);
+      color:#b8c2d5;
+      padding:30px 0;
+      font-size:1.1em;
+      margin-top:80px;
+      border-top:2px solid #1f2838;
+      backdrop-filter: blur(10px);
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction:column; 
+        padding:25px 15px;
+        text-align: center;
+      }
+      
+      header img {
+        margin-right:0; 
+        margin-bottom:20px; 
+        height:100px;
+      }
+      
+      .header-content {
+        text-align: center;
+      }
+      
+      .academy-title {
+        font-size:2em;
+      }
+      
+      .academy-tag {
+        font-size:1em;
+      }
+      
+      nav {
+        margin-top:20px; 
+        flex-direction:row; 
+        justify-content:center;
+        gap: 8px;
+      }
+      
+      nav a {
+        padding:10px 18px; 
+        font-size:0.9em;
+        margin: 3px;
+      }
+      
+      .course-section {
+        padding:40px 20px 30px 20px;
+      }
+      
+      .course-section h1 {
+        font-size: 2.2em;
+      }
+      
+      .course-subtitle {
+        font-size: 1.1em;
+        margin-bottom: 40px;
+      }
+      
+      .course-list {
+        grid-template-columns:1fr; 
+        gap:25px;
+      }
+      
+      .course-card {
+        padding:25px 20px;
+      }
+      
+      .course-card h2 {
+        font-size: 1.2em;
+      }
+      
+      .course-card p {
+        font-size: 1em;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .academy-title {
+        font-size:1.7em;
+      }
+      
+      nav a {
+        padding:8px 15px; 
+        font-size:0.85em;
+      }
+      
+      .course-section h1 {
+        font-size: 1.8em;
+      }
+      
+      .course-card {
+        padding: 20px 15px;
+      }
+      
+      .enroll-btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
 <header>
- <img src="logo.png" alt="logo">
- <div>
+ <img src="logo.png" alt="Next Myles Academy Logo">
+ <div class="header-content">
    <div class="academy-title">Next Myles Academy</div>
    <div class="academy-tag">Learn, Explore Succeed in Tech</div>
    <nav>
@@ -54,23 +357,61 @@
    </nav>
  </div>
 </header>
+
 <div class="course-section">
   <h1>Our Courses</h1>
+  <p class="course-subtitle">Comprehensive learning programs designed to empower your academic and professional journey</p>
+  
   <div class="course-list">
     <div class="course-card">
-      <h2>Tuition Classes</h2>
-      <p>Grades: 5th to 10th, I PUC, II PUC<br>Boards: ISCE, CBSE & State Board<br>Subjects: Science, Commerce</p>
+      <h2><span class="course-icon">📚</span>Tuition Classes</h2>
+      <p><strong>Grades:</strong> 5th to 10th, I PUC, II PUC<br>
+      <strong>Boards:</strong> ISCE, CBSE & State Board<br>
+      <strong>Subjects:</strong> Science, Commerce</p>
+      
+      <div class="course-features">
+        <ul>
+          <li>Expert master trainers available</li>
+          <li>Individual subject tutoring</li>
+          <li>Comprehensive study materials</li>
+          <li>Regular assessments and feedback</li>
+        </ul>
+      </div>
+      <a href="contact.html" class="enroll-btn">Enroll Now</a>
     </div>
+    
     <div class="course-card">
-      <h2>Coding & Computer Courses</h2>
-      <p>Languages: Java, Web, Python, Basic Computer, Tally</p>
+      <h2><span class="course-icon">💻</span>Coding & Computer Courses</h2>
+      <p><strong>Languages:</strong> Java, Web, Python, Basic Computer, Tally</p>
+      
+      <div class="course-features">
+        <ul>
+          <li>Hands-on programming experience</li>
+          <li>Project-based learning approach</li>
+          <li>Industry-relevant curriculum</li>
+          <li>Career guidance and placement support</li>
+        </ul>
+      </div>
+      <a href="contact.html" class="enroll-btn">Start Coding</a>
     </div>
+    
     <div class="course-card">
-      <h2>CET & NEET Coaching</h2>
-      <p>Free CET, NEET coaching every Sunday for enrolled students</p>
+      <h2><span class="course-icon">🎯</span>CET & NEET Coaching</h2>
+      <p><strong>Special Offer:</strong> Free CET, NEET coaching every Sunday for enrolled students</p>
+      
+      <div class="course-features">
+        <ul>
+          <li>Comprehensive exam preparation</li>
+          <li>Mock tests and practice sessions</li>
+          <li>Expert faculty guidance</li>
+          <li>Previous year question analysis</li>
+        </ul>
+      </div>
+      <a href="contact.html" class="enroll-btn">Join Coaching</a>
     </div>
   </div>
 </div>
+
 <footer>
   &copy; 2025 Next Myles Academy | Crafted with pride.
 </footer>
