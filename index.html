@@ -5,47 +5,314 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Next Myles Academy | Home</title>
   <style>
-  body { background:#1c2239; color:#eef1fa; font-family:'Segoe UI',Arial,sans-serif; margin:0;}
-  .hero-bar{max-width:900px; margin:auto; padding:68px 24px 30px 24px; text-align:center;}
-  .hero-bar h1{color:#ffe700; font-size:2.2em;}
-  .hero-bar p{color:#d8e1f1; font-size:1.18em; line-height:1.5em;}
-  .cta-btn{background:#bcfd4c; color:#082030; padding:14px 45px; border-radius:24px; margin:24px 0; font-size:1.2em;font-weight:700;box-shadow:0 2px 10px #b2f59e60;transition:.24s;text-decoration:none;}
-  .cta-btn:hover{background:#ff3f3f; color:#fff;}
-  
-  header {display:flex;align-items:center;justify-content:center;padding:45px 10px 10px 10px;background:#1c2239;box-shadow:0 8px 36px #0008; border-radius:0 0 34px 34px;}
-  header img {height:120px;width:auto;border-radius:18px;box-shadow:0 3px 22px #0007;margin-right:32px;}
-  .academy-title {font-size:2.2em;color:#bcfd4c;letter-spacing:2px;font-weight:700;text-shadow:2px 2px #0008;}
-  .academy-tag {color:#ff3f3f;font-size:1.09em;margin-top:6px;letter-spacing:1px;}
-  nav {margin-top:13px; display:flex; flex-wrap:wrap; justify-content:center;}
-  nav a {color:#3fbcef;background:#152344;margin:5px 5px;padding:8px 16px;text-decoration:none;font-weight:600;border-radius:14px;font-size:0.9em;}
-  footer{text-align:center;background:#102232;color:#b8c2d5;padding:26px 0;font-size:1em;margin-top:62px;border-top:2px solid #1f2838;}
-  
-  /* Mobile Responsive Styles */
-  @media (max-width: 768px) {
-    header {flex-direction:column; padding:20px 10px;}
-    header img {margin-right:0; margin-bottom:15px; height:80px;}
-    .academy-title {font-size:1.8em; text-align:center;}
-    .academy-tag {font-size:1em; text-align:center;}
-    nav {margin-top:15px; flex-direction:column; align-items:center;}
-    nav a {margin:3px 0; padding:10px 20px; width:80%; text-align:center; font-size:1em;}
-    .hero-bar {padding:40px 15px 20px 15px;}
-    .hero-bar h1 {font-size:1.8em;}
-    .hero-bar p {font-size:1em;}
-  }
-  
-  @media (max-width: 480px) {
-    .academy-title {font-size:1.5em;}
-    nav a {width:90%; padding:12px;}
-    .hero-bar h1 {font-size:1.5em;}
-  }
-</style>
+    body { 
+      background: linear-gradient(135deg, #1c2239 0%, #2d1b69 50%, #1a1a2e 100%);
+      color:#eef1fa; 
+      font-family:'Segoe UI',Arial,sans-serif; 
+      margin:0;
+      min-height:100vh;
+    }
+    
+    /* Header Styles */
+    header {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:45px 15px 15px 15px;
+      background:rgba(28,34,57,0.95);
+      box-shadow:0 8px 36px #0008; 
+      border-radius:0 0 34px 34px;
+      backdrop-filter: blur(10px);
+    }
+    
+    header img {
+      height:120px;
+      width:auto;
+      border-radius:18px;
+      box-shadow:0 8px 32px #0008;
+      margin-right:32px;
+      transition: transform 0.3s ease;
+    }
+    
+    header img:hover {
+      transform: scale(1.05);
+    }
+    
+    .header-content {
+      text-align: left;
+    }
+    
+    .academy-title {
+      font-size:2.4em;
+      color:#bcfd4c;
+      letter-spacing:2px;
+      font-weight:700;
+      text-shadow:2px 2px 8px #000;
+      margin: 0;
+      background: linear-gradient(45deg, #bcfd4c, #a8e6cf);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .academy-tag {
+      color:#ff3f3f;
+      font-size:1.1em;
+      margin-top:8px;
+      letter-spacing:1px;
+      font-weight: 500;
+    }
+    
+    nav {
+      margin-top:20px; 
+      display:flex; 
+      flex-wrap:wrap; 
+      justify-content:center; 
+      gap:12px;
+    }
+    
+    nav a {
+      color:#3fbcef;
+      background:rgba(21,35,68,0.8);
+      padding:12px 24px;
+      text-decoration:none;
+      font-weight:600;
+      border-radius:25px;
+      font-size:1em;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+    
+    nav a:hover {
+      background:#bcfd4c; 
+      color:#222;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(188, 253, 76, 0.4);
+      border: 2px solid #bcfd4c;
+    }
+    
+    /* Hero Section */
+    .hero-bar {
+      max-width:1000px; 
+      margin:0 auto; 
+      padding:80px 30px 50px 30px; 
+      text-align:center;
+    }
+    
+    .hero-bar h1 {
+      color:#ffe700; 
+      font-size:3em;
+      font-weight: 800;
+      margin-bottom: 25px;
+      text-shadow: 2px 2px 10px #000;
+      background: linear-gradient(45deg, #ffe700, #ffd700);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    
+    @keyframes glow {
+      from { text-shadow: 0 0 20px #ffe700; }
+      to { text-shadow: 0 0 30px #ffe700, 0 0 40px #ffe700; }
+    }
+    
+    .hero-bar p {
+      color:#d8e1f1; 
+      font-size:1.3em; 
+      line-height:1.7em;
+      margin-bottom: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-btn {
+      background: linear-gradient(45deg, #bcfd4c, #a8e6cf);
+      color:#082030; 
+      padding:18px 50px; 
+      border-radius:30px; 
+      margin:30px 15px; 
+      font-size:1.3em;
+      font-weight:700;
+      box-shadow:0 8px 25px rgba(188, 253, 76, 0.3);
+      transition: all 0.3s ease;
+      text-decoration:none;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .cta-btn:hover {
+      background: linear-gradient(45deg, #ff3f3f, #ff6b6b);
+      color:#fff;
+      transform: translateY(-3px);
+      box-shadow:0 12px 35px rgba(255, 63, 63, 0.4);
+    }
+    
+    /* Features Section */
+    .features-section {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 30px;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .feature-card {
+      background: rgba(45, 55, 72, 0.6);
+      border-radius: 20px;
+      padding: 30px 25px;
+      text-align: center;
+      border-left: 4px solid #bcfd4c;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+      border-left: 4px solid #ff3f3f;
+    }
+    
+    .feature-icon {
+      font-size: 3em;
+      margin-bottom: 15px;
+    }
+    
+    .feature-card h3 {
+      color: #bcfd4c;
+      font-size: 1.3em;
+      margin-bottom: 15px;
+    }
+    
+    .feature-card p {
+      color: #d8e1f1;
+      line-height: 1.6;
+    }
+    
+    /* Footer */
+    footer {
+      text-align:center;
+      background:rgba(16,34,50,0.9);
+      color:#b8c2d5;
+      padding:30px 0;
+      font-size:1.1em;
+      margin-top:80px;
+      border-top:2px solid #1f2838;
+      backdrop-filter: blur(10px);
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction:column; 
+        padding:25px 15px;
+        text-align: center;
+      }
+      
+      header img {
+        margin-right:0; 
+        margin-bottom:20px; 
+        height:100px;
+      }
+      
+      .header-content {
+        text-align: center;
+      }
+      
+      .academy-title {
+        font-size:2em;
+      }
+      
+      .academy-tag {
+        font-size:1em;
+      }
+      
+      nav {
+        margin-top:20px; 
+        flex-direction:row; 
+        justify-content:center;
+        gap: 8px;
+      }
+      
+      nav a {
+        padding:10px 18px; 
+        font-size:0.9em;
+        margin: 3px;
+      }
+      
+      .hero-bar {
+        padding:50px 20px 30px 20px;
+      }
+      
+      .hero-bar h1 {
+        font-size:2.2em;
+      }
+      
+      .hero-bar p {
+        font-size:1.1em;
+        margin-bottom: 30px;
+      }
+      
+      .cta-btn {
+        padding:15px 35px;
+        font-size:1.1em;
+        margin: 20px 10px;
+      }
+      
+      .features-section {
+        padding: 0 20px;
+        margin: 40px auto;
+      }
+      
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .feature-card {
+        padding: 25px 20px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .academy-title {
+        font-size:1.7em;
+      }
+      
+      nav a {
+        padding:8px 15px; 
+        font-size:0.85em;
+      }
+      
+      .hero-bar h1 {
+        font-size:1.8em;
+      }
+      
+      .hero-bar p {
+        font-size:1em;
+      }
+      
+      .cta-btn {
+        padding:12px 25px;
+        font-size:1em;
+        width: 80%;
+      }
+    }
+  </style>
 </head>
 <body>
 <header>
- <img src="logo.png" alt="logo">
- <div>
+ <img src="logo.png" alt="Next Myles Academy Logo">
+ <div class="header-content">
    <div class="academy-title">Next Myles Academy</div>
-   <div class="academy-tag">Learn Explore Succeed in Tech</div>
+   <div class="academy-tag">Learn, Explore Succeed in Tech</div>
    <nav>
       <a href="index.html">Home</a>
       <a href="courses.html">Courses</a>
@@ -54,12 +321,39 @@
    </nav>
  </div>
 </header>
+
 <div class='hero-bar'>
   <h1>Empowering Your Success in Academics & Tech</h1>
-  <p>Expert tuition classes, advanced coding, and CET/NEET coaching for bright minds from 5th Std to II PUC.<br>Learn, explore, and succeed with our master trainers and modern facilities. Start your journey today.</p>
+  <p>Expert tuition classes, advanced coding, and CET/NEET coaching for bright minds from 5th Std to II PUC. Learn, explore, and succeed with our master trainers and modern facilities. Start your journey today.</p>
   <a class='cta-btn' href='courses.html'>Explore Courses</a>
+  <a class='cta-btn' href='contact.html'>Contact Us</a>
 </div>
+
+<div class="features-section">
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">📚</div>
+      <h3>Expert Tuitions</h3>
+      <p>Comprehensive tuition classes for grades 5th to II PUC across all major boards with experienced faculty.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💻</div>
+      <h3>Coding Excellence</h3>
+      <p>Master programming languages including Java, Python, Web Development with hands-on projects.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🎯</div>
+      <h3>Exam Preparation</h3>
+      <p>Free CET & NEET coaching every Sunday with mock tests and personalized guidance.</p>
+    </div>
+  </div>
+</div>
+
 <footer>
+  &copy; 2025 Next Myles Academy | Crafted with pride.
+</footer>
+</body>
+</html>
   &copy; 2025 Next Myles Academy | Crafted with pride.
 </footer>
 </body>
