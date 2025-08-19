@@ -6,114 +6,41 @@
   <title>Next Myles Academy | Dashboard</title>
   <style>
     body{background:#23294b;color:#eef1fa;font-family:'Segoe UI',Arial,sans-serif;margin:0;padding:0;}
-    
-    /* Header Styles */
     header {display:flex;align-items:center;justify-content:center;padding:45px 15px 15px 15px;background:#1c2239;box-shadow:0 8px 36px #0008; border-radius:0 0 34px 34px;}
     header img {height:100px;width:auto;border-radius:18px;box-shadow:0 3px 22px #0007;margin-right:25px;}
     .academy-title {font-size:2em;color:#bcfd4c;letter-spacing:1px;font-weight:700;text-shadow:2px 2px #0008;}
     .academy-tag {color:#ff3f3f;font-size:1em;margin-top:5px;letter-spacing:1px;}
     nav {margin-top:15px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px;}
-    nav a {color:#3fbcef;background:#152344;padding:10px 18px;text-decoration:none;font-weight:600;border-radius:14px;font-size:0.95em;}
+    nav a {color:#3fbcef;background:#152344;padding:10px 18px;text-decoration:none;font-weight:600;border-radius:14px;font-size:0.95em;transition:all .2s;}
     nav a:hover {background:#bcfd4c; color:#222;}
-    
-    /* Dashboard Main Content */
     .dash-main{max-width:1200px;margin:0 auto;padding:40px 20px;}
     .dash-header{font-size:2.2em;color:#bcfd4c;font-weight:700;margin-bottom:25px;text-shadow:1px 1px #0005;text-align:center;}
     .dash-subtitle{font-size:0.5em;color:#ccc;font-weight:normal;}
-    
-    /* Dashboard Cards Grid */
     .dash-cards{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
       gap:25px;
       margin-top:30px;
     }
-    
     .dash-card{
       background:linear-gradient(135deg,#2d3748,#1a202c);
       border-radius:16px;
       box-shadow:0 8px 25px #0003;
       padding:25px 20px;
       border-left:4px solid #62d448;
-      transition:transform 0.2s ease;
+      transition:transform 0.2s;
     }
-    
-    .dash-card:hover{
-      transform:translateY(-2px);
-      box-shadow:0 12px 35px #0005;
-    }
-    
-    .dash-title{
-      font-size:1.25em;
-      color:#62d448;
-      font-weight:600;
-      margin-bottom:12px;
-      display:flex;
-      align-items:center;
-    }
-    
-    .dash-icon{
-      margin-right:10px;
-      font-size:1.1em;
-    }
-    
-    .dash-details{
-      color:#e2e8f0;
-      font-size:1em;
-      line-height:1.5;
-    }
-    
-    /* Progress Bars */
-    .progress-bar{
-      background:#4a5568;
-      border-radius:10px;
-      height:8px;
-      margin:10px 0;
-      overflow:hidden;
-    }
-    
-    .progress-fill{
-      background:linear-gradient(90deg,#62d448,#38a169);
-      height:100%;
-      border-radius:10px;
-      transition:width 0.3s ease;
-    }
-    
-    /* Stats Numbers */
-    .stat-number{
-      font-size:1.8em;
-      font-weight:700;
-      color:#bcfd4c;
-      margin:8px 0;
-    }
-    
-    /* Quick Action Buttons */
-    .quick-actions{
-      display:flex;
-      gap:10px;
-      margin-top:15px;
-      flex-wrap:wrap;
-    }
-    
-    .action-btn{
-      background:#3182ce;
-      color:#fff;
-      padding:8px 16px;
-      border-radius:8px;
-      text-decoration:none;
-      font-size:0.9em;
-      font-weight:500;
-      transition:background 0.2s;
-    }
-    
-    .action-btn:hover{
-      background:#2c5282;
-    }
-    
-    /* Footer */
+    .dash-card:hover{transform:translateY(-2px);box-shadow:0 12px 35px #0005;}
+    .dash-title{font-size:1.25em;color:#62d448;font-weight:600;margin-bottom:12px;display:flex;align-items:center;}
+    .dash-icon{margin-right:10px;font-size:1.1em;}
+    .dash-details{color:#e2e8f0;font-size:1em;line-height:1.5;}
+    .progress-bar{background:#4a5568;border-radius:10px;height:8px;margin:10px 0;overflow:hidden;}
+    .progress-fill{background:linear-gradient(90deg,#62d448,#38a169);height:100%;border-radius:10px;transition:width 0.3s;}
+    .stat-number{font-size:1.8em;font-weight:700;color:#bcfd4c;margin:8px 0;}
+    .quick-actions{display:flex;gap:10px;margin-top:15px;flex-wrap:wrap;}
+    .action-btn{background:#3182ce;color:#fff;padding:8px 16px;border-radius:8px;text-decoration:none;font-size:0.9em;font-weight:500;transition:background 0.2s;}
+    .action-btn:hover{background:#2c5282;}
     footer{text-align:center;background:#102232;color:#b8c2d5;padding:25px 0;font-size:1em;margin-top:60px;border-top:2px solid #1f2838;}
-    
-    /* Mobile Responsive */
     @media (max-width: 768px) {
       header {flex-direction:column; padding:25px 15px;}
       header img {margin-right:0; margin-bottom:15px; height:80px;}
@@ -121,7 +48,6 @@
       .academy-tag {font-size:0.9em; text-align:center;}
       nav {margin-top:15px; flex-direction:row; justify-content:center;}
       nav a {margin:3px; padding:10px 15px; font-size:0.9em;}
-      
       .dash-main{padding:25px 15px;}
       .dash-header{font-size:1.8em;}
       .dash-cards{grid-template-columns:1fr; gap:20px;}
@@ -129,11 +55,47 @@
       .quick-actions{flex-direction:column;}
       .action-btn{text-align:center;}
     }
-    
+    @media (max-width: 540px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.4em;
+      }
+      nav a {
+        width: 90%;
+        margin: 4px 0;
+        display: block;
+        text-align: center;
+        font-size: 1.08em;
+        padding: 14px 0;
+      }
+      header img {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 10px;
+      }
+      .academy-title { font-size: 1.3em; }
+      .cta-btn, .enroll-btn, .action-btn {
+        width: 100%;
+        font-size: 1em;
+        box-sizing: border-box;
+        min-width: 0;
+        max-width: 100%;
+        padding: 18px 0;
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 25px;
+      }
+      .dash-card {
+        padding: 18px 6px;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
     @media (max-width: 480px) {
-      .academy-title {font-size:1.4em;}
-      nav a {padding:8px 12px; font-size:0.85em;}
-      .dash-header{font-size:1.5em;}
+      .academy-title {font-size:1.1em;}
+      nav a {padding:8px 15px; font-size:0.85em;}
+      .dash-header{font-size:1.3em;}
       .dash-title{font-size:1.1em;}
     }
   </style>
@@ -143,7 +105,7 @@
  <img src="logo.png" alt="logo">
  <div>
    <div class="academy-title">Next Myles Academy</div>
-   <div class="academy-tag">Learn Explore Succeed in Tech</div>
+   <div class="academy-tag">Learn, Explore Succeed in Tech</div>
    <nav>
       <a href="index.html">Home</a>
       <a href="courses.html">Courses</a>
@@ -152,13 +114,11 @@
    </nav>
  </div>
 </header>
-
 <div class="dash-main">
   <div class="dash-header">
     Student Dashboard 
-    <span class="dash-subtitle"></span>
+    <span class="dash-subtitle">(Interactive Portal)</span>
   </div>
-  
   <div class="dash-cards">
     <div class="dash-card">
       <div class="dash-title">
@@ -177,7 +137,6 @@
         </div>
       </div>
     </div>
-    
     <div class="dash-card">
       <div class="dash-title">
         <span class="dash-icon">📅</span>
@@ -195,7 +154,6 @@
         </div>
       </div>
     </div>
-    
     <div class="dash-card">
       <div class="dash-title">
         <span class="dash-icon">📚</span>
@@ -214,7 +172,6 @@
         </div>
       </div>
     </div>
-    
     <div class="dash-card">
       <div class="dash-title">
         <span class="dash-icon">🔔</span>
@@ -232,7 +189,6 @@
         </div>
       </div>
     </div>
-    
     <div class="dash-card">
       <div class="dash-title">
         <span class="dash-icon">💻</span>
@@ -252,7 +208,6 @@
         </div>
       </div>
     </div>
-    
     <div class="dash-card">
       <div class="dash-title">
         <span class="dash-icon">🎯</span>
@@ -273,12 +228,7 @@
     </div>
   </div>
 </div>
-
 <footer>
-  &copy; 2025 Next Myles Academy | Crafted with pride.
-</footer>
-</body>
-</html>
   &copy; 2025 Next Myles Academy | Crafted with pride.
 </footer>
 </body>
