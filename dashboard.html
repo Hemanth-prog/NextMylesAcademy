@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard | Next Myles Academy</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<style>
+  <style>
 body {
   font-family: 'Inter', sans-serif;
   color: #232943;
@@ -14,295 +14,174 @@ body {
   min-height: 100vh;
 }
 .navbar {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  background: rgba(255,255,255,0.98);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid #eee;
-  z-index: 1000;
+  width: 100%; position: sticky; top: 0;
+  background: rgba(255,255,255,0.95); backdrop-filter: blur(20px);
+  z-index: 1000; border-bottom: 1px solid #eee; padding: 1rem 0;
 }
 .nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1.2rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: transparent;
-  width: 100%;
+  max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+  display: flex; justify-content: space-between; align-items: center; width: 100%;
 }
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  color: #4336be;
-  font-weight: 800;
-  font-size: 1.15rem;
-}
-.logo img {
-  width: 40px; height: 40px; border-radius: 10px;
-}
-.nav-links { display: flex; gap: 2rem; list-style: none; }
-.nav-links a {
-  color: #413cc8;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 6px 16px;
-  border-radius: 8px;
-  transition: background 0.2s, color 0.2s;
-}
-.nav-links a.active, .nav-links a:hover {
-  background: #f6f8ff;
-  color: #5f3dc4;
-}
-
-.dashboard-header {
-  max-width: 900px;
-  margin: 3.5rem auto 2rem auto;
-  padding: 0 2rem;
-  text-align: center;
-}
-.dashboard-header h1 {
-  font-size: 2.3rem;
-  color: #433ca7;
-  font-weight: 800;
-  margin-bottom: .7em;
-  letter-spacing: -1px;
-}
-.dashboard-header p {
-  color: #55548a;
-  font-size: 1.08rem;
-}
-.dash-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-  gap: 2.2rem;
-  max-width: 1100px;
-  margin: 1.7rem auto 3.5rem auto;
-  padding: 0 1.2rem;
-}
-.dash-card {
-  background: rgba(255,255,255, 0.93);
-  border-radius: 2.1rem;
-  box-shadow: 0 8px 34px rgba(102,126,234,0.10), 0 1.5px 4px #9486c216;
-  border: 1px solid #eaf1f6;
-  transition: box-shadow 0.26s, transform 0.22s;
-  padding: 2.2rem 1.3rem 1.5rem 1.3rem;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  min-height: 240px;
-}
-.dash-card:hover {
-  box-shadow: 0 14px 44px #7765ff1b, 0 4px 13px #9486c241;
-  border-color: #897FEA;
-  transform: translateY(-5px) scale(1.012);
-}
-.dash-emoji {
-  font-size: 1.8rem;
-  margin-bottom: 0.65em;
-}
-.dash-title {
-  color: #4f36c7;
-  font-weight: 700;
-  margin-bottom: .4em;
-  font-size: 1.18rem;
-  letter-spacing: -0.5px;
-}
-.dash-info {
-  color: #726fc1;
-  font-weight: 500;
-  font-size: 1.01rem;
-  margin-bottom: .7em;
-}
-.dash-details {
-  color: #28305e;
-  font-size: 1.07em;
-  line-height: 1.6em;
-  margin-bottom: 1em;
-  flex: 1 1 auto;
-}
-.progress-bar-bg {
-  background: #e1e4f3;
-  border-radius: 8px;
-  height: 11px;
-  width: 100%;
-  margin: .7em 0;
-  overflow: hidden;
-}
-.progress-bar-fill {
-  background: linear-gradient(90deg,#897fea 0%, #6fd8e1 100%);
-  border-radius: 8px;
-  height: 100%;
-  width: 88%;
-  transition: width .3s;
-}
-.card-footer {
-  text-align: right;
-}
-.card-footer .small-btn {
-  background: #897fea;
-  color: #fff;
-  border-radius: 1em;
-  padding: 0.5em 1.4em;
-  border: none;
-  font-weight: 600;
-  font-size: 1em;
-  margin-left: .6em;
-  cursor: pointer;
-  transition: background .22s;
-}
-.card-footer .small-btn:hover {
-  background: #5633e2;
-}
-
-/* --- MOBILE OPTIMIZATION --- */
+.logo {display: flex; align-items: center; gap: 0.8rem; color: #4336be; font-weight: 800; font-size: 1.15rem;}
+.logo img {width: 40px; height: 40px; border-radius: 10px;}
+.hamburger {display: none; flex-direction: column; gap: 4px; width: 36px; height: 36px; justify-content: center; align-items: center; background: none; border: none; cursor: pointer; z-index: 2000;}
+.hamburger span {display: block; height: 3.2px; width: 23px; background: #413cc8; border-radius: 2px; transition: 0.3s;}
+.nav-links {display: flex; gap: 2rem; list-style: none; transition: right 0.3s ease;}
+.nav-links a {color: #413cc8; text-decoration: none; font-weight: 600; padding: 6px 16px; border-radius: 8px; transition: background 0.2s, color 0.2s;}
+.nav-links a.active, .nav-links a:hover {background: #f6f8ff; color: #5f3dc4;}
+.dashboard-header {max-width: 900px; margin: 3.5rem auto 2rem auto; padding: 0 2rem; text-align: center;}
+.dashboard-header h1 {font-size: 2.3rem; color: #433ca7; font-weight: 800; margin-bottom: .7em; letter-spacing: -1px;}
+.dashboard-header p {color: #55548a; font-size: 1.08rem;}
+.dash-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 2.2rem; max-width: 1100px; margin: 1.7rem auto 3.5rem auto; padding: 0 1.2rem;}
+.dash-card {background: #fff; border-radius: 2.1rem; box-shadow: 0 8px 34px #667eea18, 0 1.5px 4px #9486c216; border: 1px solid #eaf1f6; transition: box-shadow .22s,transform .16s; padding: 2.2rem 1.3rem 1.5rem 1.3rem; position: relative; overflow: hidden; display: flex; flex-direction: column; min-height: 200px;}
+.dash-card:hover {box-shadow: 0 14px 44px #7765ff1b, 0 4px 13px #9486c241; border-color: #897FEA; transform: translateY(-4px) scale(1.017);}
+.dash-emoji {font-size: 2rem; margin-bottom: 0.65em;}
+.dash-title {color: #4f36c7; font-weight: 700; margin-bottom: .4em; font-size: 1.18rem; letter-spacing: -0.5px;}
+.dash-info {color: #726fc1; font-weight: 500; font-size: 1.01rem; margin-bottom: .7em;}
+.dash-details {color: #28305e; font-size: 1.07em; line-height: 1.6em; margin-bottom: 1em; flex: 1 1 auto;}
+.progress-bar-bg {background: #e1e4f3; border-radius: 8px; height: 11px; width: 100%; margin: .7em 0; overflow: hidden;}
+.progress-bar-fill {background: linear-gradient(90deg,#897fea 0%, #6fd8e1 100%); border-radius: 8px; height: 100%; width: 88%; transition: width .3s;}
+.card-footer {text-align: right;}
+.card-footer .small-btn {background: #897fea; color: #fff; border-radius: 1em; padding: 0.5em 1.4em; border: none; font-weight: 600; font-size: 1em; margin-left: .6em; cursor: pointer; transition: background .22s;}
+.card-footer .small-btn:hover {background: #5633e2;}
+.stats-area {background: #fff; border-radius: 1.5rem; box-shadow: 0 4px 20px #cbcbe22c; padding: 2rem 1.4rem; margin: 2rem auto; max-width: 900px; color: #3c348c; font-size: 1.1rem;}
+.stats-area ul {list-style: none; padding-left: 0; margin: 0;}
+.stats-area li {padding: 0.5em 0; border-bottom: 1px solid #ececff;}
+.stats-area li:last-child {border-bottom: none;}
+.footer {background: #1a202c; color: white; padding: 2.5rem 1rem 1.5rem 1rem; text-align:center;}
 @media (max-width: 650px) {
-  .nav-container {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    padding: 0.7rem 0.4rem !important;
-    width: 100vw !important;
-    box-sizing: border-box !important;
-  }
-  .nav-links {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 0.5rem !important;
-    width: 100vw !important;
-    margin: 0;
-    padding: 0.6rem 0;
-  }
-  .nav-links li, .nav-links a {
-    width: 100%;
-    display: block;
-    text-align: left;
-    padding: 0.8em 1.1em !important;
-    font-size: 1.08em !important;
-    box-sizing: border-box;
-    margin: 0;
-  }
-  .dashboard-header,
-  .dash-grid {
-    max-width: 100vw !important;
-    width: 100vw !important;
-    margin: 0 !important;
-    padding: 0.5rem 0.2rem 0.7rem 0.2rem !important;
-    box-sizing: border-box !important;
-  }
-  .dash-card {
-    margin: 0.9rem 0.5rem !important;
-    border-radius: 1.1rem !important;
-    padding: 1.1rem 0.3rem 1.2rem 0.5rem !important;
-    min-width: 0 !important;
-    width: auto !important;
-  }
-  body {
-    overflow-x: hidden !important;
-  }
-  .dashboard-header h1 { font-size: 1.2rem;}
+  .nav-container{padding:0.7rem 0.4rem!important;}
+  .nav-links{position:fixed!important;top:0;right:-100vw;height:100vh;width:78vw;max-width:340px;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding-top:4.3em;transition:right 0.28s cubic-bezier(.8,0,.2,1);box-shadow:-4px 0 32px #bbb2;z-index:400;}
+  .nav-links.open{right:0;}
+  .nav-links li{width:100%;border-bottom:1px solid #e7e7ff;}
+  .nav-links a{width:100%;box-sizing:border-box;padding:1.1em 1.5em 1.1em 2em;margin:0;font-size:1.06em;border-radius:0;background:transparent;text-align:left;color:#3c348c;}
+  .nav-links a.active,.nav-links a:hover{background:#f6f8ff;}
+  .logo{z-index:300;background:#fff;padding-right:0.5em;}
+  .hamburger{display:flex;}
+  body.menu-open{overflow-y:hidden;}
+  .dashboard-header,.dash-grid,.stats-area{padding:0 0.3rem;}
+  .dash-grid{grid-template-columns:1fr;gap:1.1rem;margin:1rem 0 2rem 0;}
+  .dash-card{padding:1.1rem 0.6rem 1.2rem 0.6rem;}
+  .dashboard-header h1{font-size:1.1rem;}
 }
-</style>
+  </style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="logo">
-        <img src="logo.png" alt="logo">
-        Next Myles Academy
-      </div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="courses.html">Courses</a></li>
-        <li><a href="dashboard.html" class="active">Dashboard</a></li>
-        <li><a href="contact.html">Contact</a></li>
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <img src="logo.png" alt="academy logo">
+      Next Myles Academy
+    </div>
+    <button class="hamburger" aria-label="Open Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="dashboard.html" class="active">Dashboard</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="dashboard-header">
+  <h1>Welcome to Your Learning Dashboard</h1>
+  <p>Visualize your progress, upcoming classes, assignments, coding skills, and more—everything at a glance.</p>
+</div>
+<div class="dash-grid">
+  <div class="dash-card">
+    <div class="dash-emoji">📈</div>
+    <div class="dash-title">Academic Progress</div>
+    <div class="dash-info">Completion Rate: <b>88%</b></div>
+    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:88%"></div></div>
+    <div class="dash-details">
+      You’re on track in all subjects. Keep up the good work and check your grade reports below.
+    </div>
+    <div class="card-footer">
+      <button class="small-btn">Download Report</button>
+    </div>
+  </div>
+  <div class="dash-card">
+    <div class="dash-emoji">📅</div>
+    <div class="dash-title">Upcoming Classes</div>
+    <div class="dash-info">Mathematics @ 5:00 PM Today</div>
+    <div class="dash-details">
+      <ul>
+        <li>Tomorrow: Physics – 6:00 PM</li>
+        <li>Friday: Chemistry – 6:00 PM</li>
       </ul>
     </div>
-  </nav>
-  <div class="dashboard-header">
-    <h1>Welcome to Your Learning Dashboard</h1>
-    <p>Visualize your progress, upcoming classes, assignments, coding skills, and more—everything at a glance.</p>
-  </div>
-  <div class="dash-grid">
-
-    <div class="dash-card">
-      <div class="dash-emoji">📈</div>
-      <div class="dash-title">Academic Progress</div>
-      <div class="dash-info">Completion Rate: <b>88%</b></div>
-      <div class="progress-bar-bg">
-        <div class="progress-bar-fill" style="width:88%"></div>
-      </div>
-      <div class="dash-details">
-        You’re on track in all subjects. Keep up the good work and check your grade reports below.
-      </div>
-      <div class="card-footer">
-        <button class="small-btn">Download Report</button>
-      </div>
-    </div>
-
-    <div class="dash-card">
-      <div class="dash-emoji">📅</div>
-      <div class="dash-title">Upcoming Classes</div>
-      <div class="dash-info">Mathematics @ 5:00 PM Today</div>
-      <div class="dash-details">
-        <ul>
-          <li>Tomorrow: Physics – 6:00 PM</li>
-          <li>Friday: Chemistry – 6:00 PM</li>
-        </ul>
-      </div>
-      <div class="card-footer">
-        <button class="small-btn">Full Timetable</button>
-      </div>
-    </div>
-
-    <div class="dash-card">
-      <div class="dash-emoji">📝</div>
-      <div class="dash-title">Assignments</div>
-      <div class="dash-info">2 Pending, 1 New</div>
-      <div class="dash-details">
-        <ul>
-          <li>Math Practice Set 4 – Due Tomorrow</li>
-          <li>Chemistry Notes – Due Friday</li>
-        </ul>
-      </div>
-      <div class="card-footer">
-        <button class="small-btn">Submit Now</button>
-      </div>
-    </div>
-
-    <div class="dash-card">
-      <div class="dash-emoji">💻</div>
-      <div class="dash-title">Coding Projects</div>
-      <div class="dash-info">Current: Web App Project</div>
-      <div class="progress-bar-bg">
-        <div class="progress-bar-fill" style="width:66%;background:linear-gradient(90deg,#40c9ff,#e81cff)"></div>
-      </div>
-      <div class="dash-details">
-        8 Projects Completed in Java/Python.<br>
-        <b>Next:</b> JavaScript Advanced.
-      </div>
-      <div class="card-footer">
-        <button class="small-btn">Practice Coding</button>
-      </div>
-    </div>
-
-    <div class="dash-card">
-      <div class="dash-emoji">🎯</div>
-      <div class="dash-title">Exam Prep & Announcements</div>
-      <div class="dash-info">NEET / CET this week!</div>
-      <div class="dash-details">
-        <ul>
-          <li>CET Mock Test: Sunday 10AM</li>
-          <li>NEET Q&A: Saturday</li>
-          <li>Holiday: 25th Aug</li>
-        </ul>
-      </div>
-      <div class="card-footer">
-        <button class="small-btn">All Announcements</button>
-      </div>
+    <div class="card-footer">
+      <button class="small-btn">Full Timetable</button>
     </div>
   </div>
+  <div class="dash-card">
+    <div class="dash-emoji">📝</div>
+    <div class="dash-title">Assignments</div>
+    <div class="dash-info">2 Pending, 1 New</div>
+    <div class="dash-details">
+      <ul>
+        <li>Math Practice Set 4 – Due Tomorrow</li>
+        <li>Chemistry Notes – Due Friday</li>
+      </ul>
+    </div>
+    <div class="card-footer">
+      <button class="small-btn">Submit Now</button>
+    </div>
+  </div>
+  <div class="dash-card">
+    <div class="dash-emoji">💻</div>
+    <div class="dash-title">Coding Projects</div>
+    <div class="dash-info">Current: Web App Project</div>
+    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:66%;background:linear-gradient(90deg,#40c9ff,#e81cff)"></div></div>
+    <div class="dash-details">
+      8 Projects Completed in Java/Python.<br>
+      <b>Next:</b> JavaScript Advanced.
+    </div>
+    <div class="card-footer">
+      <button class="small-btn">Practice Coding</button>
+    </div>
+  </div>
+  <div class="dash-card">
+    <div class="dash-emoji">🎯</div>
+    <div class="dash-title">Exam Prep & Announcements</div>
+    <div class="dash-info">NEET / CET this week!</div>
+    <div class="dash-details">
+      <ul>
+        <li>CET Mock Test: Sunday 10AM</li>
+        <li>NEET Q&A: Saturday</li>
+        <li>Holiday: 25th Aug</li>
+      </ul>
+    </div>
+    <div class="card-footer">
+      <button class="small-btn">All Announcements</button>
+    </div>
+  </div>
+</div>
+<div class="stats-area">
+  <ul>
+    <li>500+ Students Enrolled</li>
+    <li>95% Success Rate</li>
+    <li>10+ Expert Faculty</li>
+    <li>5 Years Experience</li>
+  </ul>
+</div>
+<footer class="footer">
+  &copy; 2025 Next Myles Academy. Crafted with excellence.
+</footer>
+<script>
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+hamburger.onclick = function() {
+  navLinks.classList.toggle('open');
+  document.body.classList.toggle('menu-open');
+};
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.onclick = function() {
+    navLinks.classList.remove('open');
+    document.body.classList.remove('menu-open');
+  };
+});
+</script>
 </body>
 </html>
