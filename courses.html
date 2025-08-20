@@ -6,162 +6,18 @@
   <title>Courses | Next Myles Academy</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-body {
-  font-family: 'Inter', sans-serif;
-  color: #232943;
-  background: linear-gradient(135deg, #faffff 0%, #e3e3ff 100%);
-  margin: 0;
-  min-height: 100vh;
-}
-.navbar {
-  width: 100%; position: sticky; top: 0;
-  background: rgba(255,255,255,0.95); backdrop-filter: blur(20px);
-  z-index: 1000; border-bottom: 1px solid #eee;
-}
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1.2rem 2rem;
-  display: flex; align-items: center; justify-content: space-between;
-  width: 100%;
-}
-.logo {
-  display: flex; align-items: center; gap: 0.8rem; color: #4336be; font-weight: 800; font-size: 1.15rem;
-}
-.logo img {width: 40px; height: 40px; border-radius: 10px;}
-.nav-links { display: flex; gap: 2rem; list-style: none;}
-.nav-links a {
-  color: #413cc8;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 6px 16px;
-  border-radius: 8px;
-  transition: background 0.2s, color 0.2s;
-}
-.nav-links a.active, .nav-links a:hover {
-  background: #f6f8ff;
-  color: #5f3dc4;
-}
-.page-header {max-width:900px;margin: 5.2rem auto 2.5rem auto;padding: 0 2rem;text-align:center;}
-.page-header h1 {font-size: 2.7rem;font-weight: 800;letter-spacing: -1px;color: #413cc8;}
-.page-header p {max-width: 520px;color: #52557e;margin: 1em auto 0;font-size: 1.2rem;}
-.course-grid {display: grid;grid-template-columns: repeat(auto-fit,minmax(330px,1fr));gap: 2.5rem;max-width: 1100px;margin: 2rem auto 3.5rem auto;padding: 0 2rem;}
-.course-card {
-  background: rgba(255,255,255, 0.96);
-  border-radius: 2rem;
-  box-shadow: 0 8px 32px #a2a2f015, 0 1.5px 4px #9486c216;
-  border: 1px solid #eaecff;
-  padding: 2.2rem 1.4rem 2.1rem 1.4rem;
-  display: flex; flex-direction: column; position: relative; overflow: hidden; align-items: flex-start;
-}
-.course-emoji {font-size: 2.2rem;margin-bottom: .7em;}
-.course-title {color: #3c348c;font-size: 1.23rem;font-weight: 700;margin-bottom: .4em;}
-.course-meta {color: #928ee9;font-size: 1.04rem;margin-bottom: 1.1rem;font-weight: 500;}
-.course-card ul {margin: .5rem 0 1.1rem 0;padding: 0 0 0 1.2em;color: #27336d;font-size: 1rem;line-height: 1.6em;}
-.course-card ul li {margin-bottom: 0.4em;}
-.course-action {margin-top: auto; width: 100%; display: flex; justify-content: flex-end;}
-.btn {
-  background: linear-gradient(135deg,#897fea 0%,#5e52e4 100%);
-  color: #fff; font-weight: 700;
-  padding: 0.85em 2.2em; border: none; border-radius: 2em;
-  font-size: 1.07em; cursor: pointer;
-  box-shadow: 0 2px 15px #8d85e528; transition: all .23s;
-  text-decoration: none; display: inline-block;
-}
-.btn:hover {background: linear-gradient(120deg,#3c348c 0%,#897fea 100%); transform: translateY(-2px) scale(1.025); color: #fff;}
-@media (max-width: 650px) {
-  .nav-container {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    padding: 0.7rem 0.4rem !important;
-    width: 100vw !important;
-  }
-  .nav-links {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 0.5rem !important;
-    width: 100vw !important;
-    margin: 0;
-    padding: 0.6rem 0;
-  }
-  .nav-links li, .nav-links a {
-    width: 100%;
-    display: block;
-    text-align: left;
-    padding: 0.8em 1.1em !important;
-    font-size: 1.1em !important;
-    box-sizing: border-box;
-    margin: 0;
-  }
-  .page-header, .course-grid {padding: 0 0.3rem;}
-  .course-grid {grid-template-columns:1fr;gap:1.1rem;margin:1rem 0 2rem 0;}
-  .course-card {padding: 1.1rem 0.6rem 1.2rem 0.6rem;}
-  .page-header h1 {font-size: 1.1rem;}
-}
-</style>
-</head>
-<body>
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="logo">
-        <img src="logo.png" alt="academy logo">
-        Next Myles Academy
-      </div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="courses.html" class="active">Courses</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-  <div class="page-header">
-    <h1>Our Featured Courses</h1>
-    <p>Explore our most popular learning tracks designed for success in academics and tech.</p>
-  </div>
-  <div class="course-grid">
-    <div class="course-card">
-      <span class="course-emoji">📚</span>
-      <span class="course-title">Tuition Classes</span>
-      <span class="course-meta">Grades: 5th–10th, I & II PUC | ICSE, CBSE, State Board</span>
-      <ul>
-        <li>Science & Commerce streams</li>
-        <li>Master trainers for each subject</li>
-        <li>Weekly unit tests with feedback</li>
-        <li>Personal doubt-clearing sessions</li>
-      </ul>
-      <div class="course-action">
-        <a href="contact.html" class="btn">Enroll Now</a>
-      </div>
-    </div>
-    <div class="course-card">
-      <span class="course-emoji">💻</span>
-      <span class="course-title">Coding & Computer Skills</span>
-      <span class="course-meta">Java, Python, Web, Basic Comp., Tally</span>
-      <ul>
-        <li>Live project-based learning</li>
-        <li>Professional web & app skills</li>
-        <li>Coding for all levels, kids to adults</li>
-        <li>Certificate on completion</li>
-      </ul>
-      <div class="course-action">
-        <a href="contact.html" class="btn">Start Coding</a>
-      </div>
-    </div>
-    <div class="course-card">
-      <span class="course-emoji">🎯</span>
-      <span class="course-title">CET & NEET Coaching</span>
-      <span class="course-meta">Every Sunday (Free for enrolled students)</span>
-      <ul>
-        <li>Topic-wise expert sessions</li>
-        <li>Online & offline mock exams</li>
-        <li>Progress analytics dashboard</li>
-        <li>Faculty Q&A, success strategy</li>
-      </ul>
-      <div class="course-action">
-        <a href="contact.html" class="btn">Join CET/NEET Prep</a>
-      </div>
-    </div>
-  </div>
-</body>
-</html>
+body {font-family: 'Inter',sans-serif;color:#232943;background:linear-gradient(135deg,#faffff 0%,#e3e3ff 100%);margin:0;min-height:100vh;}
+.navbar {width:100%;position:sticky;top:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);z-index:1000;border-bottom:1px solid #eee;padding:1rem 0;}
+.nav-container {max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;width:100%;}
+.logo {display:flex;align-items:center;gap:0.8rem;color:#4336be;font-weight:800;font-size:1.15rem;}
+.logo img {width:40px;height:40px;border-radius:10px;}
+.hamburger {display:none; flex-direction:column; gap:4px; width:36px; height:36px;justify-content:center;align-items:center;background:none;border:none;cursor:pointer;z-index:2000;}
+.hamburger span {display:block;height:3.2px;width:23px;background:#413cc8;border-radius:2px;transition:0.3s;}
+.nav-links {display:flex;gap:2rem;list-style:none;transition:right 0.3s ease;}
+.nav-links a {color:#413cc8;text-decoration:none;font-weight:600;padding:6px 16px;border-radius:8px;transition:background 0.2s,color 0.2s;}
+.nav-links a.active,.nav-links a:hover {background:#f6f8ff;color:#5f3dc4;}
+.page-header {max-width:900px;margin:5.2rem auto 2.5rem auto;padding:0 2rem;text-align:center;}
+.page-header h1 {font-size:2.7rem;font-weight:800;letter-spacing:-1px;color:#413cc8;}
+.page-header p {max-width:520px;color:#52557e;margin:1em auto 0;font-size:1.2rem;}
+.course-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:2.5rem;max-width:1100px;margin:2rem auto 3.5rem auto;padding:0 2rem;}
+.course-card {background:rgba(255,255,255,0.96);border-radius:2rem;box-shadow:0 8px 32px #a2a2f015,0
