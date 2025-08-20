@@ -6,12 +6,12 @@
   <title>Courses | Next Myles Academy</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-body {font-family: 'Inter',sans-serif;color:#232943;background:linear-gradient(135deg,#faffff 0%,#e3e3ff 100%);margin:0;min-height:100vh;}
+body {font-family:'Inter',sans-serif;color:#232943;background:linear-gradient(135deg,#faffff 0%,#e3e3ff 100%);margin:0;min-height:100vh;}
 .navbar {width:100%;position:sticky;top:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);z-index:1000;border-bottom:1px solid #eee;padding:1rem 0;}
 .nav-container {max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;width:100%;}
 .logo {display:flex;align-items:center;gap:0.8rem;color:#4336be;font-weight:800;font-size:1.15rem;}
 .logo img {width:40px;height:40px;border-radius:10px;}
-.hamburger {display:none; flex-direction:column; gap:4px; width:36px; height:36px;justify-content:center;align-items:center;background:none;border:none;cursor:pointer;z-index:2000;}
+.hamburger {display:none;flex-direction:column;gap:4px;width:36px;height:36px;justify-content:center;align-items:center;background:none;border:none;cursor:pointer;z-index:2000;}
 .hamburger span {display:block;height:3.2px;width:23px;background:#413cc8;border-radius:2px;transition:0.3s;}
 .nav-links {display:flex;gap:2rem;list-style:none;transition:right 0.3s ease;}
 .nav-links a {color:#413cc8;text-decoration:none;font-weight:600;padding:6px 16px;border-radius:8px;transition:background 0.2s,color 0.2s;}
@@ -36,7 +36,19 @@ body {font-family: 'Inter',sans-serif;color:#232943;background:linear-gradient(1
 .footer {background:#1a202c;color:white;padding:2.5rem 1rem 1.5rem 1rem;text-align:center;}
 @media (max-width:650px){
   .nav-container{padding:0.7rem 0.4rem!important;}
-  .nav-links{position:fixed!important;top:0;right:-100vw;height:100vh;width:78vw;max-width:340px;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding-top:4.3em;transition:right 0.28s cubic-bezier(.8,0,.2,1);box-shadow:-4px 0 32px #bbb2;z-index:400;}
+  .nav-links{
+    position:fixed!important;
+    top:0;right:-100vw;
+    height:100vh;width:78vw;
+    max-width:340px;
+    background:#fff;
+    flex-direction:column!important;align-items:flex-start!important;gap:0!important;
+    padding-top:4.3em;
+    transition:right 0.3s cubic-bezier(.8,0,.2,1);
+    box-shadow:-4px 0 32px #bbb2;
+    z-index:400;
+    display:flex!important;
+  }
   .nav-links.open{right:0;}
   .nav-links li{width:100%;border-bottom:1px solid #e7e7ff;}
   .nav-links a{width:100%;box-sizing:border-box;padding:1.1em 1.5em 1.1em 2em;margin:0;font-size:1.06em;border-radius:0;background:transparent;text-align:left;color:#3c348c;}
@@ -44,7 +56,7 @@ body {font-family: 'Inter',sans-serif;color:#232943;background:linear-gradient(1
   .logo{z-index:300;background:#fff;padding-right:0.5em;}
   .hamburger{display:flex;}
   body.menu-open{overflow-y:hidden;}
-  .page-header,.course-grid{padding:0 0.3rem;}
+  .page-header,.course-grid,.stats-area{padding:0 0.3rem;}
   .course-grid{grid-template-columns:1fr;gap:1.1rem;margin:1rem 0 2rem 0;}
   .course-card{padding:1.1rem 0.6rem 1.2rem 0.6rem;}
   .page-header h1{font-size:1.1rem;}
