@@ -20,4 +20,127 @@ body {font-family: 'Inter',sans-serif;color:#232943;background:linear-gradient(1
 .page-header h1 {font-size:2.7rem;font-weight:800;letter-spacing:-1px;color:#413cc8;}
 .page-header p {max-width:520px;color:#52557e;margin:1em auto 0;font-size:1.2rem;}
 .course-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:2.5rem;max-width:1100px;margin:2rem auto 3.5rem auto;padding:0 2rem;}
-.course-card {background:rgba(255,255,255,0.96);border-radius:2rem;box-shadow:0 8px 32px #a2a2f015,0
+.course-card {background:rgba(255,255,255,0.96);border-radius:2rem;box-shadow:0 8px 32px #a2a2f015,0 1.5px 4px #9486c216;border:1px solid #eaecff;padding:2.2rem 1.4rem 2.1rem 1.4rem;display:flex;flex-direction:column;position:relative;overflow:hidden;align-items:flex-start;}
+.course-emoji {font-size:2.2rem;margin-bottom:.7em;}
+.course-title {color:#3c348c;font-size:1.23rem;font-weight:700;margin-bottom:.4em;}
+.course-meta {color:#928ee9;font-size:1.04rem;margin-bottom:1.1rem;font-weight:500;}
+.course-card ul {margin:.5rem 0 1.1rem 0;padding:0 0 0 1.2em;color:#27336d;font-size:1rem;line-height:1.6em;}
+.course-card ul li {margin-bottom:0.4em;}
+.course-action {margin-top:auto;width:100%;display:flex;justify-content:flex-end;}
+.btn {background:linear-gradient(135deg,#897fea 0%,#5e52e4 100%);color:#fff;font-weight:700;padding:0.85em 2.2em;border:none;border-radius:2em;font-size:1.07em;cursor:pointer;box-shadow:0 2px 15px #8d85e528;transition:all .23s;text-decoration:none;display:inline-block;}
+.btn:hover {background:linear-gradient(120deg,#3c348c 0%,#897fea 100%);transform:translateY(-2px) scale(1.025);color:#fff;}
+.stats-area {background:#fff;border-radius:1.5rem;box-shadow:0 4px 20px #cbcbe22c;padding:2rem 1.4rem;margin:2rem auto;max-width:900px;color:#3c348c;font-size:1.1rem;}
+.stats-area ul {list-style:none;padding-left:0;margin:0;}
+.stats-area li {padding:0.5em 0;border-bottom:1px solid #ececff;}
+.stats-area li:last-child {border-bottom:none;}
+.footer {background:#1a202c;color:white;padding:2.5rem 1rem 1.5rem 1rem;text-align:center;}
+@media (max-width:650px){
+  .nav-container{padding:0.7rem 0.4rem!important;}
+  .nav-links{position:fixed!important;top:0;right:-100vw;height:100vh;width:78vw;max-width:340px;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding-top:4.3em;transition:right 0.28s cubic-bezier(.8,0,.2,1);box-shadow:-4px 0 32px #bbb2;z-index:400;}
+  .nav-links.open{right:0;}
+  .nav-links li{width:100%;border-bottom:1px solid #e7e7ff;}
+  .nav-links a{width:100%;box-sizing:border-box;padding:1.1em 1.5em 1.1em 2em;margin:0;font-size:1.06em;border-radius:0;background:transparent;text-align:left;color:#3c348c;}
+  .nav-links a.active,.nav-links a:hover{background:#f6f8ff;}
+  .logo{z-index:300;background:#fff;padding-right:0.5em;}
+  .hamburger{display:flex;}
+  body.menu-open{overflow-y:hidden;}
+  .page-header,.course-grid{padding:0 0.3rem;}
+  .course-grid{grid-template-columns:1fr;gap:1.1rem;margin:1rem 0 2rem 0;}
+  .course-card{padding:1.1rem 0.6rem 1.2rem 0.6rem;}
+  .page-header h1{font-size:1.1rem;}
+}
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <img src="logo.png" alt="academy logo">
+      Next Myles Academy
+    </div>
+    <button class="hamburger" aria-label="Open Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html" class="active">Courses</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="page-header">
+  <h1>Our Featured Courses</h1>
+  <p>Explore our most popular learning tracks designed for success in academics and tech.</p>
+</div>
+<div class="course-grid">
+  <div class="course-card">
+    <span class="course-emoji">📚</span>
+    <span class="course-title">Tuition Classes</span>
+    <span class="course-meta">Grades: 5th–10th, I & II PUC | ICSE, CBSE, State Board</span>
+    <ul>
+      <li>Science & Commerce streams</li>
+      <li>Master trainers for each subject</li>
+      <li>Weekly unit tests with feedback</li>
+      <li>Personal doubt-clearing sessions</li>
+    </ul>
+    <div class="course-action">
+      <a href="contact.html" class="btn">Enroll Now</a>
+    </div>
+  </div>
+  <div class="course-card">
+    <span class="course-emoji">💻</span>
+    <span class="course-title">Coding & Computer Skills</span>
+    <span class="course-meta">Java, Python, Web, Basic Comp., Tally</span>
+    <ul>
+      <li>Live project-based learning</li>
+      <li>Professional web & app skills</li>
+      <li>Coding for all levels, kids to adults</li>
+      <li>Certificate on completion</li>
+    </ul>
+    <div class="course-action">
+      <a href="contact.html" class="btn">Start Coding</a>
+    </div>
+  </div>
+  <div class="course-card">
+    <span class="course-emoji">🎯</span>
+    <span class="course-title">CET & NEET Coaching</span>
+    <span class="course-meta">Every Sunday (Free for enrolled students)</span>
+    <ul>
+      <li>Topic-wise expert sessions</li>
+      <li>Online & offline mock exams</li>
+      <li>Progress analytics dashboard</li>
+      <li>Faculty Q&A, success strategy</li>
+    </ul>
+    <div class="course-action">
+      <a href="contact.html" class="btn">Join CET/NEET Prep</a>
+    </div>
+  </div>
+</div>
+<div class="stats-area">
+  <ul>
+    <li>500+ Students Enrolled</li>
+    <li>95% Success Rate</li>
+    <li>10+ Expert Faculty</li>
+    <li>5 Years Experience</li>
+  </ul>
+</div>
+<footer class="footer">
+  &copy; 2025 Next Myles Academy. Crafted with excellence.
+</footer>
+<script>
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+hamburger.onclick = function() {
+  navLinks.classList.toggle('open');
+  document.body.classList.toggle('menu-open');
+};
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.onclick = function() {
+    navLinks.classList.remove('open');
+    document.body.classList.remove('menu-open');
+  };
+});
+</script>
+</body>
+</html>
