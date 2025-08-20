@@ -6,127 +6,55 @@
   <title>Next Myles Academy</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-body {
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: #1a1a1a;
-  margin: 0; min-height: 100vh; line-height: 1.6;
-}
-.navbar {
-  width: 100%; position: sticky; top: 0;
-  background: rgba(255,255,255,0.95); backdrop-filter: blur(20px);
-  z-index: 1000; border-bottom: 1px solid rgba(200,200,255,0.15);
-  padding: 1rem 0;
-}
-.nav-container {
-  max-width: 1200px; margin: 0 auto;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 0 2rem; width: 100%;
-}
-.logo {
-  display: flex; align-items: center; gap: 1rem; font-weight: 700; font-size: 1.2rem; color: #2d3748;
-}
-.logo img {width: 50px; height: 50px; border-radius: 12px; object-fit: cover;}
-.hamburger {
-  display: none; flex-direction: column; gap: 4px;
-  width: 36px; height: 36px; justify-content: center; align-items: center;
-  background: none; border: none; cursor: pointer;
-  z-index: 2000;
-}
-.hamburger span {
-  display: block; height: 3.2px; width: 23px; background: #413cc8; border-radius: 2px;
-  transition: 0.3s;
-}
-.nav-links {
-  display: flex; list-style: none; gap: 2rem;
-  transition: right 0.3s ease;
-}
-.nav-links a {
-  text-decoration: none; color: #4a5568; font-weight: 500;
-  padding: 0.5rem 1rem; border-radius: 8px;
-  transition: all 0.3s; position: relative;
-}
-.nav-links a:hover, .nav-links a.active {
-  color: #667eea; background: rgba(102,126,234,0.09);
-}
-
-/* HERO SECTION */
-.hero { min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 2rem;}
-.hero-content { max-width: 800px; position: relative; z-index: 2; }
-.hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 800; color: #fff; margin-bottom: 1.5rem; text-shadow: 0 6px 20px #0002; }
-.hero .subtitle { font-size: 1.18rem; color: rgba(255,255,255,0.93); margin-bottom: 2.2rem; font-weight: 400; }
-.cta-buttons {display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;}
-.btn {padding: 1rem 2rem; border-radius: 12px; font-weight: 600; font-size: 1rem; border: none; cursor: pointer; transition: all 0.2s;}
-.btn-primary {background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; box-shadow: 0 4px 20px #667eea33;}
-.btn-primary:hover {transform: translateY(-2px); box-shadow:0 8px 20px #667eea55;}
-.btn-secondary {background: rgba(255,255,255,0.15); color: white; border:1px solid #fff4;}
-.btn-secondary:hover {background: rgba(255,255,255,0.25);}
-.features {padding: 4rem 2rem 2rem 2rem; background: #fff;}
+body {font-family:'Inter',sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#1a1a1a;margin:0;min-height:100vh;line-height:1.6;}
+.navbar {width:100%;position:sticky;top:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);z-index:1000;border-bottom:1px solid rgba(200,200,255,0.15);padding:1rem 0;}
+.nav-container {max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 2rem;width:100%;}
+.logo {display:flex;align-items:center;gap:1rem;font-weight:700;font-size:1.2rem;color:#2d3748;}
+.logo img {width:50px;height:50px;border-radius:12px;object-fit:cover;}
+.hamburger {display:none;flex-direction:column;gap:4px;width:36px;height:36px;justify-content:center;align-items:center;background:none;border:none;cursor:pointer;z-index:2000;}
+.hamburger span {display:block;height:3.2px;width:23px;background:#413cc8;border-radius:2px;transition:0.3s;}
+.nav-links {display:flex;list-style:none;gap:2rem;transition:right 0.3s ease;}
+.nav-links a {text-decoration:none;color:#4a5568;font-weight:500;padding:0.5rem 1rem;border-radius:8px;transition:all 0.3s;}
+.nav-links a:hover,.nav-links a.active {color:#667eea;background:rgba(102,126,234,0.09);}
+.hero {min-height:80vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 2rem;}
+.hero-content {max-width:800px;position:relative;z-index:2;}
+.hero h1 {font-size:clamp(2.5rem,8vw,5rem);font-weight:800;color:#fff;margin-bottom:1.5rem;text-shadow:0 6px 20px #0002;}
+.hero .subtitle {font-size:1.18rem;color:rgba(255,255,255,0.93);margin-bottom:2.2rem;font-weight:400;}
+.cta-buttons {display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;}
+.btn {padding:1rem 2rem;border-radius:12px;font-weight:600;font-size:1rem;border:none;cursor:pointer;transition:all 0.2s;}
+.btn-primary {background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;box-shadow:0 4px 20px #667eea33;}
+.btn-primary:hover {transform:translateY(-2px);box-shadow:0 8px 20px #667eea55;}
+.btn-secondary {background:rgba(255,255,255,0.15);color:white;border:1px solid #fff4;}
+.btn-secondary:hover {background:rgba(255,255,255,0.25);}
+.features {padding:4rem 2rem 2rem 2rem;background:#fff;}
 .container {max-width:1200px;margin:0 auto;}
-.features-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;}
-.feature-card {background: #fff; border-radius: 18px; padding: 2rem 1.4rem; box-shadow: 0 6px 20px #ccc3; border-left:6px solid #667eea;}
-.feature-icon {font-size: 2.4rem; margin-bottom: 14px;}
-.feature-card h3 {font-size: 1.2rem;color:#2d327e;}
-.feature-list, .feature-card p {color:#515174;}
-.stats-area {
-  background: #fff;
-  border-radius: 1.5rem;
-  box-shadow: 0 4px 20px #cbcbe22c;
-  padding: 2rem 1.4rem;
-  margin: 2rem auto;
-  max-width: 900px;
-  color: #3c348c;
-  font-size: 1.1rem;
-}
-.stats-area ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-}
-.stats-area li {
-  padding: 0.5em 0;
-  border-bottom: 1px solid #ececff;
-}
-.stats-area li:last-child {border-bottom: none;}
-.footer {background: #1a202c; color: white; padding: 2.5rem 1rem 1.5rem 1rem; text-align:center;}
-
-/* ----- MOBILE OPTIMIZATION + HAMBURGER MENU ----- */
-@media (max-width: 650px) {
-  .nav-container {padding: 0.7rem 0.4rem !important;}
-  .nav-links {
-    position: fixed !important;
-    top: 0; right: -100vw;
-    height: 100vh; width: 78vw;
-    max-width: 340px;
-    background: #fff;
-    flex-direction: column; align-items: flex-start;
-    gap: 0;
-    padding-top: 4.3em;
-    transition: right 0.28s cubic-bezier(.8,0,.2,1);
-    box-shadow: -4px 0 32px #bbb2;
-    z-index: 400;
-  }
-  .nav-links.open {right: 0;}
-  .nav-links li {width:100%; border-bottom:1px solid #e7e7ff;}
-  .nav-links a {
-    width: 100%; box-sizing: border-box; padding: 1.1em 1.5em 1.1em 2em; margin:0;
-    font-size: 1.06em; border-radius: 0;
-    background: transparent; text-align: left; color: #3c348c;
-  }
-  .nav-links a.active, .nav-links a:hover {background: #f6f8ff;}
-  .logo {z-index: 300; background: #fff; padding-right:0.5em;}
-  .hamburger {
-    display: flex;
-  }
-  body.menu-open {overflow-y: hidden;}
-  .hero {padding:0 0.2rem;}
-  .features, .container {padding: 1.1rem 0.1rem 1.2rem 0.1rem;}
-  .features-grid {grid-template-columns:1fr;}
+.features-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:2rem;}
+.feature-card {background:#fff;border-radius:18px;padding:2rem 1.4rem;box-shadow:0 6px 20px #ccc3;border-left:6px solid #667eea;}
+.feature-icon {font-size:2.4rem;margin-bottom:14px;}
+.feature-card h3 {font-size:1.2rem;color:#2d327e;}
+.feature-list,.feature-card p {color:#515174;}
+.stats-area {background:#fff;border-radius:1.5rem;box-shadow:0 4px 20px #cbcbe22c;padding:2rem 1.4rem;margin:2rem auto;max-width:900px;color:#3c348c;font-size:1.1rem;}
+.stats-area ul {list-style:none;padding-left:0;margin:0;}
+.stats-area li {padding:0.5em 0;border-bottom:1px solid #ececff;}
+.stats-area li:last-child {border-bottom:none;}
+.footer {background:#1a202c;color:white;padding:2.5rem 1rem 1.5rem 1rem;text-align:center;}
+@media (max-width:650px){
+  .nav-container{padding:0.7rem 0.4rem!important;}
+  .nav-links{position:fixed!important;top:0;right:-100vw;height:100vh;width:78vw;max-width:340px;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding-top:4.3em;transition:right 0.28s cubic-bezier(.8,0,.2,1);box-shadow:-4px 0 32px #bbb2;z-index:400;}
+  .nav-links.open{right:0;}
+  .nav-links li{width:100%;border-bottom:1px solid #e7e7ff;}
+  .nav-links a{width:100%;box-sizing:border-box;padding:1.1em 1.5em 1.1em 2em;margin:0;font-size:1.06em;border-radius:0;background:transparent;text-align:left;color:#3c348c;}
+  .nav-links a.active,.nav-links a:hover{background:#f6f8ff;}
+  .logo{z-index:300;background:#fff;padding-right:0.5em;}
+  .hamburger{display:flex;}
+  body.menu-open{overflow-y:hidden;}
+  .hero{padding:0 0.2rem;}
+  .features,.container{padding:1.1rem 0.1rem 1.2rem 0.1rem;}
+  .features-grid{grid-template-columns:1fr;}
 }
   </style>
 </head>
 <body>
-
 <nav class="navbar">
   <div class="nav-container">
     <div class="logo">
@@ -144,7 +72,6 @@ body {
     </ul>
   </div>
 </nav>
-
 <section class="hero">
   <div class="hero-content">
     <h1>Learn. Explore. Succeed.</h1>
@@ -155,7 +82,6 @@ body {
     </div>
   </div>
 </section>
-
 <section class="features">
   <div class="container">
     <div class="features-grid">
@@ -195,7 +121,6 @@ body {
     </div>
   </div>
 </section>
-
 <div class="stats-area">
   <ul>
     <li>500+ Students Enrolled</li>
@@ -204,20 +129,16 @@ body {
     <li>5 Years Experience</li>
   </ul>
 </div>
-
 <footer class="footer">
   &copy; 2025 Next Myles Academy. Crafted with excellence.
 </footer>
-
 <script>
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
-
 hamburger.onclick = function() {
   navLinks.classList.toggle('open');
   document.body.classList.toggle('menu-open');
 };
-
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.onclick = function() {
     navLinks.classList.remove('open');
